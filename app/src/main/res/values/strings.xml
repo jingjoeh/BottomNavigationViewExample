@@ -1,3 +1,7 @@
 <resources>
 	<string name="app_name">BottomNavigationViewExample</string>
+	<string name="menu_recent">Recents</string>
+	<string name="menu_favorite">Favorites</string>
+	<string name="menu_nearby">Nearby</string>
+	<string name="menu_more">More</string>
 </resources>
