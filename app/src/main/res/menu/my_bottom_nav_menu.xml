@@ -13,5 +13,5 @@
 		android:id="@+id/item_nearby"
 		android:icon="@drawable/ic_nearby_black_24dp"
 		android:title="@string/menu_nearby"/>
-
+	
 </menu>

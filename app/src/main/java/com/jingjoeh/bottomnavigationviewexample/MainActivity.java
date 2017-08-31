@@ -15,28 +15,27 @@ public class MainActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		textView = (TextView) findViewById(R.id.text);
-		BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_nav_view);
+		textView = findViewById(R.id.text);
 
-		bottomNavigationView.setOnNavigationItemSelectedListener(
-				new BottomNavigationView.OnNavigationItemSelectedListener() {
+		BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_nav_view);
+		bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+			@Override
+			public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+				switch (item.getItemId()) {
+					case R.id.item_recent:
+						textView.setText("Recent");
+						return true;
+					case R.id.item_favorite:
+						textView.setText("Favorite");
+						return true;
+					case R.id.item_nearby:
+						textView.setText("Nearby");
+						return true;
+				}
+				return false;
+			}
+		});
+		bottomNavigationView.setSelectedItemId(R.id.item_favorite);
 
-					@Override
-					public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-						switch (item.getItemId()) {
-							case R.id.item_recent:
-								textView.setText("Recents Selected");
-								break;
-							case R.id.item_favorite:
-								textView.setText("Favorites Selected");
-								break;
-							case R.id.item_nearby:
-								textView.setText("Nearby Selected");
-								break;
-						}
-						return false;
-					}
-				});
 	}
 }
